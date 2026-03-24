@@ -1,5 +1,6 @@
 FROM python:3.13-slim
 
+<<<<<<< HEAD
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     libxcb1 \
@@ -50,3 +51,25 @@ COPY . .
 # Expose port and run the app
 EXPOSE 8000
 CMD ["python", "app.py"]
+=======
+WORKDIR /app
+
+RUN apt-get update
+
+RUN apt-get install -y --no-install-recommends \
+    libgl1-mesa-glx \
+    libsm6 \
+    libxext6 \
+    libxrender1 \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+EXPOSE 8000
+
+CMD ["python", "app.py"]
+>>>>>>> c7a69fb6710ceec48eff89a4cf2a3f517db75b5a
