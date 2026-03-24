@@ -1,10 +1,14 @@
-FROM python:3.13-slim
+FROM python:3.13-slim AS python-base
+
+FROM debian:bookworm-slim
+
+COPY --from=python-base /usr/local /usr/local
 
 WORKDIR /app
 
-RUN apt-get update
-
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgl1 \
+    libglib2.0-0 \
     libsm6 \
     libxext6 \
     libxrender1 \
