@@ -52,24 +52,26 @@ COPY . .
 EXPOSE 8000
 CMD ["python", "app.py"]
 =======
-WORKDIR /app
+  FROM python:3.13-slim
 
-RUN apt-get update
+  WORKDIR /app
 
-RUN apt-get install -y --no-install-recommends \
-    libgl1-mesa-glx \
-    libsm6 \
-    libxext6 \
-    libxrender1 \
-    libgomp1 \
-    && rm -rf /var/lib/apt/lists/*
+  RUN apt-get update && apt-get install -y \
+      libgl1 \
+      libxkbcommon0 \
+      libxkbcommon-x11-0 \
+      libglib2.0-0 \
+      libsm6 \
+      libxext6 \
+      libxrender1 \
+      libgomp1 \
+      && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+  COPY requirements.txt .
+  RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+  COPY . .
 
-EXPOSE 8000
+  EXPOSE 8000
+  CMD ["python", "app.py"]
 
-CMD ["python", "app.py"]
->>>>>>> c7a69fb6710ceec48eff89a4cf2a3f517db75b5a
