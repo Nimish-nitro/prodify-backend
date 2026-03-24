@@ -5,6 +5,7 @@ WORKDIR /app
 RUN apt-get update
 
 RUN apt-get install -y --no-install-recommends \
+    libgl1-mesa-glx \
     libsm6 \
     libxext6 \
     libxrender1 \
