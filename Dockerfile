@@ -1,6 +1,6 @@
 FROM python:3.13-slim
 
-<<<<<<< HEAD
+HEAD
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     libxcb1 \
@@ -51,7 +51,7 @@ COPY . .
 # Expose port and run the app
 EXPOSE 8000
 CMD ["python", "app.py"]
-=======
+
   FROM python:3.13-slim
 
   WORKDIR /app
