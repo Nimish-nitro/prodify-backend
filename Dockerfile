@@ -2,14 +2,13 @@ FROM python:3.13-slim
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    libxcb1 \
-    libxkbcommon0 \
-    libxkbcommon-x11-0 \
-    libgl1-mesa-glx \
+RUN apt-get update
+
+RUN apt-get install -y --no-install-recommends \
     libsm6 \
     libxext6 \
-    libxrender-dev \
+    libxrender1 \
+    libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
