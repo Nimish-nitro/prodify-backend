@@ -3,9 +3,12 @@
 import pytesseract
 import cv2
 from preprocessor import preprocess
+import platform
 
-# If Tesseract is not in PATH, set the path manually here
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+if platform.system() == "Windows":
+    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+else:
+    pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract""
 
 def extract_text(image_path):
     """
