@@ -108,7 +108,7 @@ INSERT IGNORE INTO submissions (employee_id, timestamp, activity_class, progress
 ('EMP010', NOW() - INTERVAL 20 MINUTE, 'Non-productive', 16.0, 14.0, 'Flipkart'),
 ('EMP010', NOW() - INTERVAL 30 MINUTE, 'Productive',     55.0, 58.0, 'Excel'),
 ('EMP010', NOW() - INTERVAL 40 MINUTE, 'Productive',     60.0, 62.0, 'Word'),
-('EMP010', NOW() - INTERVAL 50 MINUTE, 'Idle',           5.0,  5.0,  'Desktop');
+('EMP010', NOW() - INTERVAL 50 MINUTE, 'Idle',           5.0,  5.0,  'Desktop'),
 
 ('ADMIN1', NOW() - INTERVAL 10 MINUTE, 'Productive', 90.0, 92.0, 'VS Code'),
 ('ADMIN1', NOW() - INTERVAL 20 MINUTE, 'Productive', 85.0, 88.0, 'Chrome'),
