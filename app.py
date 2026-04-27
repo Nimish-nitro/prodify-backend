@@ -198,7 +198,11 @@ def results(employee_id):
 
 # ─── RUN ──────────────────────────────────────────────────────────────────────
 
-if __name__ == "__main__":
-    print("✅ ProdiFy backend running on http://localhost:8000")
+#if __name__ == "__main__":
+    #print("✅ ProdiFy backend running on http://localhost:8000")
     import os
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8000)), debug=False)
+   # app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8000)), debug=False)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    print(f"✅ ProdiFy backend running on port {port}")
+    app.run(host="0.0.0.0", port=port, debug=False)
