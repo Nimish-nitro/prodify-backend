@@ -9,7 +9,7 @@ DB_CONFIG = {
     "port":     int(os.getenv("MYSQLPORT", 3306)),
     "user":     os.getenv("MYSQLUSER", "root"),
     "password": os.getenv("MYSQLPASSWORD", ""),
-    "database": os.getenv("MYSQLDATABASE", "prodify")
+    "database": os.getenv("MYSQLDATABASE", "railway")
 }
 
 def get_connection():
